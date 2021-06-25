@@ -16,7 +16,7 @@ public class CargoServiceImpl implements CargoService{
     private CargoDao dao;
 
     @Override
-    public void salver(Cargo cargo) {
+    public void salvar(Cargo cargo) {
         dao.save(cargo);
     }
 
