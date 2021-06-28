@@ -1,10 +1,11 @@
 package com.lucas.curso.boot.dao;
 
-import com.lucas.curso.boot.domain.Departamento;
-
 import java.util.List;
 
+import com.lucas.curso.boot.domain.Departamento;
+
 public interface DepartamentoDao {
+
     void save(Departamento departamento);
 
     void update(Departamento departamento);

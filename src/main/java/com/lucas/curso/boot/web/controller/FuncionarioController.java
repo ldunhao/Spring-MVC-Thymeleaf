@@ -1,5 +1,4 @@
-package com.lucas.curso.boot.web.controller;
-
+package com.mballem.curso.boot.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/funcionarios")
 public class FuncionarioController {
 
-    @GetMapping("/cadastrar")
-    public String cadastrar(){
-        return "/funcionario/cadastro";
-    };
-
-    @GetMapping("/listar")
-    public String listar(){
-        return "/funcionario/lista";
-    };
+	@GetMapping("/cadastrar")
+	public String cadastrar() {
+		return "/funcionario/cadastro";
+	}
+	
+	@GetMapping("/listar")
+	public String listar() {
+		return "/funcionario/lista"; 
+	}
 }

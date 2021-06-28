@@ -1,78 +1,80 @@
 package com.lucas.curso.boot.domain;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.*;
+
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "FUNCIONARIOS")
-public class Funcionario extends AbstractEntity<Long>{
+public class Funcionario extends AbstractEntity<Long> {
 
-    @Column(nullable = false, unique = false)
-    private String nome;
+	@Column(nullable = false, unique = true)
+	private String nome;
+	
+	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
+	private BigDecimal salario;
+	
+	@Column(name= "data_entrada", nullable = false, columnDefinition = "DATE")
+	private LocalDate dataEntrada;
+	
+	@Column(name = "data_saida", columnDefinition = "DATE")
+	private LocalDate dataSaida;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "endereco_id_fk")
+	private Endereco endereco;
+	
+	@ManyToOne
+	@JoinColumn(name = "cargo_id_fk")
+	private Cargo cargo;
 
-    @Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
-    private BigDecimal salario;
+	public String getNome() {
+		return nome;
+	}
 
-    @Column(name = "data_entrada",nullable = false, columnDefinition = "DATE")
-    private LocalDate dataEntrada;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    @Column(name = "data_saida", columnDefinition = "DATE")
-    private LocalDate dataSaida;
+	public BigDecimal getSalario() {
+		return salario;
+	}
 
-    @OneToOne
-    @JoinColumn(name = "endereco_id_fk")
-    private Endereco endereco;
+	public void setSalario(BigDecimal salario) {
+		this.salario = salario;
+	}
 
-    @ManyToOne
-    @JoinColumn(name = "cargo_id_fk")
-    private Cargo cargo;
+	public LocalDate getDataEntrada() {
+		return dataEntrada;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setDataEntrada(LocalDate dataEntrada) {
+		this.dataEntrada = dataEntrada;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public LocalDate getDataSaida() {
+		return dataSaida;
+	}
 
-    public BigDecimal getSalario() {
-        return salario;
-    }
+	public void setDataSaida(LocalDate dataSaida) {
+		this.dataSaida = dataSaida;
+	}
 
-    public void setSalario(BigDecimal salario) {
-        this.salario = salario;
-    }
+	public Endereco getEndereco() {
+		return endereco;
+	}
 
-    public LocalDate getDataEntrada() {
-        return dataEntrada;
-    }
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
-    public void setDataEntrada(LocalDate dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
+	public Cargo getCargo() {
+		return cargo;
+	}
 
-    public LocalDate getDataSaida() {
-        return dataSaida;
-    }
-
-    public void setDataSaida(LocalDate dataSaida) {
-        this.dataSaida = dataSaida;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public Cargo getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
-    }
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
 }

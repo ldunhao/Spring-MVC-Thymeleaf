@@ -2,84 +2,85 @@ package com.lucas.curso.boot.domain;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "ENDERECOS")
-public class Endereco extends AbstractEntity<Long>{
+public class Endereco extends AbstractEntity<Long> {
 
-    @Column(nullable = false)
-    private String logradouro;
+	@Column(nullable = false)
+	private String logradouro;
+	
+	@Column(nullable = false)
+	private String bairro;
+	
+	@Column(nullable = false)
+	private String cidade;
+	
+	@Column(nullable = false, length = 2)
+	@Enumerated(EnumType.STRING)
+	private UF uf;
+	
+	@Column(nullable = false, length = 9)
+	private String cep;
+	
+	@Column(nullable = false, length = 5)
+	private Integer numero;
+	
+	private String complemento;
 
-    @Column(nullable = false)
-    private String bairro;
+	public String getLogradouro() {
+		return logradouro;
+	}
 
-    @Column(nullable = false)
-    private String cidade;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
 
-    @Column(nullable = false, length = 2)
-    @Enumerated(EnumType.STRING)
-    private UF uf;
+	public String getBairro() {
+		return bairro;
+	}
 
-    @Column(nullable = false, length = 9)
-    private String cep;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
 
-    @Column(nullable = false, length = 5)
-    private Integer numero;
+	public String getCidade() {
+		return cidade;
+	}
 
-    private String complemento;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
 
-    public String getLogradouro() {
-        return logradouro;
-    }
+	public UF getUf() {
+		return uf;
+	}
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
 
-    public String getBairro() {
-        return bairro;
-    }
+	public String getCep() {
+		return cep;
+	}
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 
-    public String getCidade() {
-        return cidade;
-    }
+	public Integer getNumero() {
+		return numero;
+	}
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
 
-    public UF getUf() {
-        return uf;
-    }
+	public String getComplemento() {
+		return complemento;
+	}
 
-    public void setUf(UF uf) {
-        this.uf = uf;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
 }

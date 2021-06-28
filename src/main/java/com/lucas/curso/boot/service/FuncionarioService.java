@@ -1,10 +1,11 @@
 package com.lucas.curso.boot.service;
 
-import com.lucas.curso.boot.domain.Funcionario;
-
 import java.util.List;
 
+import com.lucas.curso.boot.domain.Funcionario;
+
 public interface FuncionarioService {
+
     void salvar(Funcionario funcionario);
 
     void editar(Funcionario funcionario);

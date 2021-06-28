@@ -1,13 +1,14 @@
 package com.lucas.curso.boot.dao;
 
-import com.lucas.curso.boot.domain.Funcionario;
-
 import java.util.List;
 
-public interface FuncionarioDao {
-    void save(Funcionario departamento);
+import com.lucas.curso.boot.domain.Funcionario;
 
-    void update(Funcionario departamento);
+public interface FuncionarioDao {
+    
+	void save(Funcionario funcionario);
+
+    void update(Funcionario funcionario);
 
     void delete(Long id);
 

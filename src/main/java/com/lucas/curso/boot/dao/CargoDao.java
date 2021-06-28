@@ -1,13 +1,14 @@
 package com.lucas.curso.boot.dao;
 
-import com.lucas.curso.boot.domain.Cargo;
-
 import java.util.List;
 
-public interface CargoDao {
-    void save(Cargo departamento);
+import com.lucas.curso.boot.domain.Cargo;
 
-    void update(Cargo departamento);
+public interface CargoDao {
+
+    void save(Cargo cargo );
+
+    void update(Cargo cargo);
 
     void delete(Long id);
 
