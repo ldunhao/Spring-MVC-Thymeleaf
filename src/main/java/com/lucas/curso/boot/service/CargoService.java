@@ -1,18 +1,20 @@
 package com.lucas.curso.boot.service;
 
-import com.lucas.curso.boot.domain.Cargo;
-
 import java.util.List;
+
+import com.lucas.curso.boot.domain.Cargo;
 
 public interface CargoService {
 
-    void salver(Cargo cargo);
-
-    void editar(Cargo cargo);
-
-    void excluir(Long id);
-
-    Cargo buscarPorId(Long id);
-
-    List<Cargo> buscarTodos();
+	void salvar(Cargo cargo);
+	
+	void editar(Cargo cargo);
+	
+	void excluir(Long id);
+	
+	Cargo buscarPorId(Long id);
+	
+	List<Cargo> buscarTodos();
+	
+	boolean cargoTemFuncionarios(Long id);
 }
